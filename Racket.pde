@@ -1,4 +1,4 @@
-
+import java.util.Random;
 public class Racket {
   private PVector racketPos;
   private int size = 100;

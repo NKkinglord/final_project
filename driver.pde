@@ -189,7 +189,7 @@ public void gravity() {
 
   if (swing2) {
     a -=0.05;
-    b +=0.05;
+    b +=0.06;
 
     pushMatrix();
     if (racketLeft.leftRotation <330 && !doneSwing2) {
@@ -223,7 +223,7 @@ public void gravity() {
 
   if (swing1) {
     c -=0.05;
-    d +=0.05;
+    d +=0.06;
 
     pushMatrix();
     if (racketRight.rightRotation >=210 && !doneSwing) {
@@ -234,7 +234,7 @@ public void gravity() {
         lastStateChangeTime = millis();
       }
       if (birdie.hit) {
-                System.out.println(racketRight.racketState);
+
         birdie.startRound = false;
         birdie.rightSwings();
       }

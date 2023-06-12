@@ -33,13 +33,14 @@ public class Birdie {
       float x = racket.racketPos.x-30  + racket.size * cos(radians(racket.leftRotation))*2;
       float y = racket.racketPos.y + racket.size * sin(radians(racket.leftRotation))*2;
 
-      if (rectRect(birdiePos.x-20, birdiePos.y-10, size, size, x+30, y, racket.size*a, racket.size*b)) {
+      if (rectRect(birdiePos.x-20, birdiePos.y-10, size, size, x+30, y-10, racket.size*a, racket.size*b)) {
 
         return true;
       } else return false;
     } else {
       float x = racket.racketPos.x  + racket.size * cos(radians(racket.rightRotation))*2;
       float y = racket.racketPos.y + racket.size * sin(radians(racket.rightRotation))*2;
+
       if (rectRect(birdiePos.x-20, birdiePos.y-10, size, size, x-85*c, y, racket.size*c, racket.size*d)) {
 
 
@@ -92,12 +93,16 @@ public class Birdie {
       }
       if (birdiePos.x < 0) {
         birdieVelocity.x *= -0.3;
-        birdieVelocity.y *= -0.7;
+        Random random = new Random();
+        double randomValue = random.nextDouble()*1.3  - 0.9;
+        birdieVelocity.y *= randomValue;
         birdiePos.x = 0;
       }
       if (birdiePos.x > width ) {
         birdieVelocity.x *= -0.3;
-        birdieVelocity.y *= -0.7;
+        Random random = new Random();
+        double randomValue = random.nextDouble()*1.3 - 0.9;
+        birdieVelocity.y *= randomValue;
         birdiePos.x = width;
       }
       if (birdiePos.x>=695 && birdiePos.x<=705&& birdiePos.y>625) {
